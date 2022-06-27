@@ -6,14 +6,14 @@
 #    By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/14 04:00:43 by mmoutawa          #+#    #+#              #
-#    Updated: 2022/06/14 05:10:33 by mmoutawa         ###   ########.fr        #
+#    Updated: 2022/06/27 02:25:18 by mmoutawa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 PS_NAME = philo
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -lpthread -pthread
-SRCS = philo.c utils.c
+CFLAGS = -Wall -Wextra -Werror 
+SRCS = philo.c utils.c init.c check.c threads_tools.c
 
 OBJS = $(SRCS:.c=.o)
 
