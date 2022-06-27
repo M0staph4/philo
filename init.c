@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 23:55:54 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/06/26 12:49:41 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/06/27 02:41:32 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	init_list(char **av, t_philo *philo)
 	i = -1;
 	while (++i < philo->nb_philo)
 		philo[i].fork = fork;
+	free(fork);
 	pthread_mutex_init(&(philo->write), NULL);
 	pthread_mutex_init(&(philo->time), NULL);
 }

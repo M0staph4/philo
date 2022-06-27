@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 07:51:29 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/06/27 02:24:12 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/06/27 02:47:35 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int	main(int ac, char **av)
 	init_data(philo, ac, av);
 	init_list(av, philo);
 	creat_threads(philo);
-	//system("leaks philo");
 	return(0);
 }

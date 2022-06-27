@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 00:00:44 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/06/27 02:19:07 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/06/27 02:44:57 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,5 @@ void creat_threads(t_philo *philo)
 		usleep(50);
 	}
 	check_died(philo);
+	free(thread);
 }
