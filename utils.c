@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 05:08:36 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/06/25 23:58:47 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/07/06 19:00:14 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-long right_time()
+long	right_time(void)
 {
-	struct timeval tv;
+	struct timeval	tv;
 
 	gettimeofday(&tv, NULL);
 	return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));

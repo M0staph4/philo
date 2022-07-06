@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 23:55:54 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/06/27 02:41:32 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:54:22 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	init_data(t_philo *philo, int ac, char **av)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	count = ft_atoi(av[1]);
 	i = -1;
-	while(++i < count)
+	while (++i < count)
 	{
 		philo[i].id = i;
 		philo[i].nb_philo = ft_atoi(av[1]);
@@ -36,8 +36,8 @@ void	init_data(t_philo *philo, int ac, char **av)
 
 void	init_list(char **av, t_philo *philo)
 {	
-	pthread_mutex_t *fork;
-	int i;
+	pthread_mutex_t	*fork;
+	int				i;
 
 	i = -1;
 	fork = malloc(sizeof(pthread_mutex_t) * ft_atoi(av[1]));

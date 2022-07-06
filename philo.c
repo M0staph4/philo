@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/26 07:51:29 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/06/27 02:47:35 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:55:17 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 int	main(int ac, char **av)
 {
-	t_philo *philo;
+	t_philo	*philo;
 
-	if (!check_num(ac, av))
+	if (ac >= 5 && ac <= 6)
 	{
-		printf("ERROR\n");
-		return(0);
+		if (!check_num(ac, av))
+		{
+			printf("ERROR\n");
+			return (0);
+		}
+		philo = malloc(sizeof(t_philo) * ft_atoi(av[1]));
+		init_data(philo, ac, av);
+		init_list(av, philo);
+		creat_threads(philo);
 	}
-	philo =  malloc(sizeof(t_philo) * ft_atoi(av[1]));
-	init_data(philo, ac, av);
-	init_list(av, philo);
-	creat_threads(philo);
-	return(0);
+	return (0);
 }

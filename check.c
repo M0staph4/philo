@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 23:54:13 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/06/27 02:44:11 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:53:23 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 int	check_num(int ac, char **av)
 {
 	int	i;
-	
-	if(ft_atoi(av[1]) > 200 || ft_atoi(av[2]) < 60 || ft_atoi(av[3]) < 60 || ft_atoi(av[4]) < 60)
+
+	if (ft_atoi(av[1]) > 200 || ft_atoi(av[1]) < 1 || ft_atoi(av[2]) < 60
+		|| ft_atoi(av[3]) < 60 || ft_atoi(av[4]) < 60)
 		return (0);
 	if (av[5] && ft_atoi(av[5]) <= 0)
-			return (0);
+		return (0);
 	while (--ac > 0)
 	{
 		i = 0;
@@ -32,30 +33,33 @@ int	check_num(int ac, char **av)
 			i++;
 		}
 	}
-	return(1);
+	return (1);
 }
 
-int check(t_philo *philo)
+int	check(t_philo *philo)
 {
-	int i = 0;
-	int x = 0;
-	while(i <= philo->nb_philo)
+	int	i;
+	int	x;
+
+	i = 0;
+	x = 0;
+	while (i <= philo->nb_philo)
 	{
-		if (philo->hw_eat  == philo[i].hmt_eat)
+		if (philo->hw_eat == philo[i].hmt_eat)
 			x++;
 		if (x == philo->nb_philo)
-			return(1);
+			return (1);
 		i++;
 	}
-	return(0);
-		
+	return (0);
 }
+
 void	check_died(t_philo *philo)
 {
-	while(!philo->is_death)
+	while (!philo->is_death)
 	{
 		pthread_mutex_lock(&philo->time);
-		if(right_time() - philo->lt_eat >= philo->time_to_die)
+		if (right_time() - philo->lt_eat >= philo->time_to_die)
 		{
 			philo->is_death = 1;
 			print(philo, 5);

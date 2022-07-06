@@ -6,7 +6,7 @@
 /*   By: mmoutawa <mmoutawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 03:48:36 by mmoutawa          #+#    #+#             */
-/*   Updated: 2022/06/27 02:14:58 by mmoutawa         ###   ########.fr       */
+/*   Updated: 2022/07/06 18:55:57 by mmoutawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_philo
 	int				time_to_eat;
 	int				time_to_sleep;
 	int				hw_eat;
-	int 			hmt_eat;
+	int				hmt_eat;
 	int				is_death;
 	long long		start;
 	int				is_eating;
@@ -44,8 +44,8 @@ int		check_num(int ac, char **av);
 void	init_data(t_philo *philo, int ac, char **av);
 void	init_list(char **av, t_philo *philo);
 long	right_time(void);
-void	creat_threads (t_philo *philo);
-void print(t_philo *philo, int mv);
+void	creat_threads(t_philo *philo);
+void	print(t_philo *philo, int mv);
 void	check_died(t_philo *philo);
 
 #endif
